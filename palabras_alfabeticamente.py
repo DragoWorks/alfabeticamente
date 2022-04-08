@@ -22,38 +22,32 @@ while True:
         else:
             break
 
-    while True:
+    # Agregar palabra
+    if entrada == 1:
+        print("\nEscriba una palabra para mostrarla alfabeticamente")
+        entrada = input("=> ")
 
-        # Agregar palabra
-        if entrada == 1:
-            print("\nEscriba una palabra para mostrarla alfabeticamente")
-            entrada = input("=> ")
-
-            if entrada.isnumeric() or entrada.isspace(): # Por si el input es un numero
-                print("Introduzca una palabra real.")
-                break
-
+        if entrada.isnumeric() or entrada.isspace(): # Por si el input es un numero
+            print("Introduzca una palabra real.")
+        else:
             print("Se agrego la palabra")
             palabras.append(entrada) # Añadiendo la palabra a la lista
-            break
 
-        # Mostrar palabras
-        elif entrada == 2: 
-            contador = 0 # Contador para ir contando la cantidad de palabras
+    # Mostrar palabras
+    elif entrada == 2: 
+        contador = 0 # Contador para ir contando la cantidad de palabras
 
-            if not palabras: # Verificar si la lista no está vacia
-                print("Aun no a agregado palabras")
-                break
-
+        if not palabras: # Verificar si la lista no está vacia
+            print("Aun no a agregado palabras")
+        else:
             print("\nLista de palabras ordenadas alfabeticamente: ")
             for i in palabras: # Cada que la "i" encuentre una palabra la va a imprimir
                 contador += 1 # Sumandole al contador para que se vayan numerando las palabras
                 print(f'{contador}. "{i}"')
-            break
 
-        # Salir de la aplicación
-        elif entrada == 3:
-            quit()
+    # Salir de la aplicación
+    elif entrada == 3:
+        quit()
 
-        else:
-            break
+    else:
+        pass
